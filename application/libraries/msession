@@ -1,0 +1,29 @@
+@session_start();
+
+trait msession {
+
+
+    function check($field)
+    {
+        if (empty($_SESSION[$field]))
+        {
+            return false;
+        }
+    }
+
+    function add($key,$element)
+    {
+        $_SESSION[$key]=$element;
+    }
+
+    function get($key){
+        if (!empty($_SESSION[$key]))
+        {
+            return $_SESSION[$key];
+        }
+        else{
+            return NULL;
+        }
+    }
+
+}
